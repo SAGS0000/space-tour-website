@@ -1,0 +1,171 @@
+@import "../../components/_variables.scss";
+
+.technology {
+  background-image: url("../../assets/technology/background-technology-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100svh;
+  width: 100%;
+
+  text-align: center;
+  overflow-x: hidden;
+  &__content {
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__image {
+      padding-block: 2rem;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    &__navigation {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        border: 1px solid rgba($color: $tertiary, $alpha: 0.5);
+        &:hover {
+          border: 1px solid $tertiary;
+        }
+        &.active {
+          background-color: $tertiary;
+          border: none;
+          color: $primary;
+        }
+      }
+    }
+    &__subheading {
+      font-size: $sh2;
+      letter-spacing: $word-spacing-sh2;
+      font-family: $font-barlow-condensed;
+      font-weight: 100;
+      color: $tertiary;
+      margin-top: 1rem;
+    }
+    &__title {
+      font-size: $sh1;
+      font-weight: 200;
+    }
+    &__description {
+      margin-top: 1rem;
+      padding: 0 2rem;
+      font-family: sans-serif;
+      font-size: $sh2;
+      font-weight: 100;
+      // margin-top: 1rem;
+      color: rgba($tertiary, 0.5);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .technology {
+    background-image: url("../../assets/technology/background-technology-tablet.jpg");
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      &__subtitle {
+        padding: 2rem;
+        width: 100%;
+        text-align: start;
+        font-size: $h5;
+      }
+      &__navigation {
+        .tab {
+          height: 50px;
+          width: 50px;
+          font-size: $p;
+        }
+      }
+      &__description {
+        width: 80%;
+      }
+      &__image {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .technology {
+    background-image: url("../../assets/technology/background-technology-desktop.jpg");
+    padding: 5rem 0 5rem 7rem;
+    &__content {
+      display: grid;
+      grid-template-areas:
+        "subtitle subtitle subtitle"
+        "navigation subheading image"
+        "navigation title image"
+        "navigation description image";
+      &__subtitle {
+        grid-area: subtitle;
+        text-align: left;
+        font-size: $h5;
+      }
+      &__navigation {
+        // margin-top: 6rem;
+        margin-right: 4rem;
+        margin-left: 2rem;
+        grid-area: navigation;
+        flex-direction: column;
+        .tab {
+          height: 75px;
+          width: 75px;
+          font-size: $sh1;
+        }
+      }
+      &__subheading {
+        grid-area: subheading;
+        margin-top: 11rem;
+        text-align: left;
+      }
+      &__title {
+        grid-area: title;
+        text-align: left;
+        font-size: $h3;
+        margin: 0;
+        padding: 0;
+      }
+      &__description {
+        grid-area: description;
+        grid-area: description;
+        text-align: left;
+        margin-bottom: 12rem;
+        padding: 0;
+        width: 400px;
+        color: rgba($tertiary, 0.8);
+        font-family: $font-barlow-condensed;
+        font-size: $p;
+        font-weight: 200;
+      }
+      &__image {
+        grid-area: image;
+        margin-left: 10rem;
+        width: 100%;
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

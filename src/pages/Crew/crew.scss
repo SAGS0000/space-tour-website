@@ -1,0 +1,173 @@
+@import "../../components/variables";
+
+.crew {
+  background-image: url("../../assets/crew/background-crew-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+
+  &__content {
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgba($color: $tertiary, $alpha: 0.2);
+      margin-top: 2rem;
+      width: 80%;
+      img {
+        width: 60%;
+      }
+    }
+    &__navigation {
+      padding: 2rem;
+      display: flex;
+      gap: 1rem;
+      .tab {
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        background-color: rgba($color: $tertiary, $alpha: 0.2);
+        &.active {
+          background-color: $tertiary;
+        }
+        &:hover {
+          background-color: rgba($tertiary, 0.5);
+        }
+      }
+    }
+    &__position {
+      text-transform: uppercase;
+      font-size: $sh2;
+      letter-spacing: $word-spacing-sh2;
+      font-weight: 100;
+      color: rgba($tertiary, 0.5);
+      margin-top: 1rem;
+    }
+    &__title {
+      font-size: $h5;
+      font-weight: 200;
+    }
+    &__description {
+      padding: 0 2rem;
+      font-family: sans-serif;
+      font-size: $sh2;
+      font-weight: 100;
+      margin-top: 1rem;
+      color: rgba($tertiary, 0.5);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .crew {
+    background-image: url("./../../assets/crew/background-crew-tablet.jpg");
+    &__content {
+      display: flex;
+      flex-direction: column;
+      &__subtitle {
+        order: 1;
+        width: 100%;
+        text-align: left;
+        padding: 2rem;
+        font-size: $h5;
+        font-weight: 200;
+      }
+      &__position {
+        order: 2;
+        font-size: $h5;
+        font-weight: 200;
+      }
+      &__title {
+        order: 3;
+        font-size: $h4;
+      }
+      &__description {
+        order: 4;
+        width: 80%;
+        color: rgba($tertiary, 0.8);
+      }
+      &__navigation {
+        order: 5;
+      }
+      &__image {
+        order: 6;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .crew {
+    background-image: url("./../../assets/crew/background-crew-desktop.jpg");
+    padding: 5rem 5rem 0 5rem;
+    &__content {
+      padding-left: 4rem;
+      display: grid;
+      grid-template-areas:
+        "subtitle image"
+        "position image"
+        "title image"
+        "description image"
+        "navigation image";
+
+      &__subtitle {
+        grid-area: subtitle;
+        text-align: left;
+        font-size: $h5;
+        margin-bottom: 5rem;
+      }
+      &__image {
+        grid-area: image;
+        margin-left: 2rem;
+        img {
+          width: 100%;
+        }
+      }
+      &__position {
+        grid-area: position;
+        text-align: left;
+        font-size: $h4;
+        line-height: 0;
+        padding: 0;
+        margin: 0;
+      }
+      &__title {
+        grid-area: title;
+        text-align: left;
+        font-size: $h3;
+        line-height: 0;
+        padding: 0;
+        margin: 0;
+      }
+      &__description {
+        grid-area: description;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        font-size: $p;
+        font-family: $font-barlow-condensed;
+        letter-spacing: 2px;
+        color: $tertiary;
+        font-weight: 100;
+        width: 400px;
+      }
+      &__navigation {
+        grid-area: navigation;
+        justify-content: flex-start;
+        padding: 0;
+        margin-top: 2rem;
+        .tab {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
